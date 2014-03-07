@@ -38,8 +38,8 @@ module.exports = class RedisAction
   # @param {Function} callback(success)  callback function
   setCurrentTool: (meetingID, tool, callback) ->
     @redisStore.set RedisKeys.getCurrentToolString(meetingID), tool, (err, reply) ->
-	  if err?
-		callback?(err, reply)
+      if err?
+        callback?(err, reply)
   # Set the presenter on redis.
   # @param {string}   meetingID the ID of the meeting
   # @param {string}   sessionID the sessionID (unique ID) of the user
@@ -48,8 +48,8 @@ module.exports = class RedisAction
   # TODO: returns publicID or false, doesn't make much sense, review
   setPresenter: (meetingID, sessionID, publicID, callback) ->
     @redisStore.hmset RedisKeys.getPresenterString(meetingID), "sessionID", sessionID, "publicID", publicID, (err, reply) ->
-	  if err?
-		callback?(err, reply)
+      if err?
+        callback?(err, reply)
   # Given a meetingID, sessionID and username a meeting will be created and a user with the
   # given username will be joined. The callback indicates either true or false depending on whether
   # the meeting was created successfully or not.
