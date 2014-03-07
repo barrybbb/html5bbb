@@ -10,7 +10,10 @@
   <form id="login-form">
     <input id="user-name" type="text" maxlength="30" name="user[name]" placeholder="Enter a username" autofocus="autofocus"/>
     <select id="meeting-id" name="meeting[id]">
-      <% _.each(meetings, function(meeting) { %>
+      <option value='22222efefefjijijijijij3445454-0000000000'>
+          yangDemo
+      </option>
+			<% _.each(meetings, function(meeting) { %>
         <option value='<%= meeting.get("meetingID") %>'>
           <%= meeting.get("meetingName") %>
         </option>
