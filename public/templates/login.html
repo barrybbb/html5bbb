@@ -1,23 +1,37 @@
 <div id="login-container">
 
 <img id="bbb-logo" alt="" src="images/bbb_logo.png">
-  <p id="welcomeMsg">
+  <span class="help-block">
     Please type a username and meeting ID below and click Sign in to start your session.
-  </p>
+  </span>
 
-  <form id="login-form">
-    <input id="user-name" type="text" maxlength="30" name="user[name]" placeholder="Enter a username" autofocus="autofocus"/>
-    <select id="meeting-id" name="meeting[id]">
-      <option value='22222efefefjijijijijij3445454-0000000000'>
-          yangDemo
-      </option>
-			<% _.each(meetings, function(meeting) { %>
-        <option value='<%= meeting.get("meetingID") %>'>
-          <%= meeting.get("meetingName") %>
-        </option>
-      <% }); %>
-    </select>
-    <input id="login-button" type="submit" class="submit_btn" value="Join"/>
+  <form id="login-form" class="form-horizontal" role="form">
+	<div class="form-group">
+		<label  class="col-sm-2 control-label">UserName</label>
+		<div class="col-sm-10">
+			<input id="user-name" type="text" maxlength="30" name="user[name]" placeholder="Enter a username" class="form-control" autofocus="autofocus"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Room</label>
+		<div class="col-sm-10">
+			<select id="meeting-id" name="meeting[id]" class="form-control">
+			  <option value='22222efefefjijijijijij3445454-0000000000'>
+				  yangDemo
+			  </option>
+					<% _.each(meetings, function(meeting) { %>
+				<option value='<%= meeting.get("meetingID") %>'>
+				  <%= meeting.get("meetingName") %>
+				</option>
+			  <% }); %>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-offset-2 col-sm-10">
+		  <button type="submit" class="btn btn-default" id="login-button">Join</button>
+		</div>
+	</div>
   </form>
 
 </div>
