@@ -17,10 +17,8 @@ requirejs.config({
     // in production (see build.js). It's kept here so the scripts can require
     // it with require.js
     'jquery': 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min',
-    //'jquery': 'lib/jquery/jquery.min',
     'jquery.ui': 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min',
-    //'jquery.ui': 'lib/jquery/jquery-ui.min',
-    //'bootstrap': '../vendor/js/bootstrap',
+
     'jquery.mousewheel': 'lib/jquery/jquery.mousewheel.min',
     'jquery.autosize': 'lib/jquery/jquery.autosize-min',
     'jquery.form': 'lib/jquery/jquery.form',
