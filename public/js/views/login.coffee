@@ -20,8 +20,8 @@ define [
     render: ->
       # At first we render a simple "loading" page while we check if the
       # user is authenticated or not
-      #compiledTemplate = _.template(loginLoadingTemplate, {})
-      #@$el.html compiledTemplate
+      compiledTemplate = _.template(loginTemplate, {})
+      @$el.html compiledTemplate
       # Go check the authentication
       @_checkAuthentication()
 
@@ -48,7 +48,7 @@ define [
           if @model.get("loginAccepted")
             @_onLoginAccepted()
           else
-            @_renderLoginFields()
+            #@_renderLoginFields()
         error: (model, xhr, options) =>
           console.log "Unexpected error fetching authentication data:", model, xhr, options
           @_renderLoginFields()
