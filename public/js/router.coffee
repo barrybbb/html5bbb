@@ -3,10 +3,8 @@ define [
   'underscore',
   'backbone',
   'globals',
-  'cs!views/app',
-  'cs!views/login',
-  'cs!views/session'
-], ($, _, Backbone, globals, AppView, LoginView, SessionView) ->
+  'cs!views/app'
+], ($, _, Backbone, globals, AppView, SessionView) ->
 
   Router = Backbone.Router.extend
     routes:
@@ -18,13 +16,15 @@ define [
       @appView = new AppView()
 
     showLogin: () ->
-      globals.router.navigate "/login", {replace: true}
-      @loginView ?= new LoginView()
-      @appView.render(@loginView)
+      require ['cs!views/login'], (LoginView) =>
+        globals.router.navigate "/login", {replace: true}
+        @loginView ?= new LoginView()
+        @appView.render(@loginView)
 
     showSession: () ->
-      globals.router.navigate "/session", {replace: true}
-      @sessionView ?= new SessionView()
-      @appView.render(@sessionView)
+      require ['cs!views/session'], (SessionView) =>
+        globals.router.navigate "/session", {replace: true}
+        @sessionView ?= new SessionView()
+        @appView.render(@sessionView)
 
   Router
